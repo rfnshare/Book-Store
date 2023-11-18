@@ -1,2 +1,5 @@
-../venv
+venv
 main.py
+bookstore/__pycache__/*
+books/__pycache__/*
+.idea
