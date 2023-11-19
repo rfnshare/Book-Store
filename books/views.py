@@ -13,8 +13,8 @@ def index(request):
 
 
 def show(request, id):
-    global da
+    global data
     for book in data:
         if book['id'] == id:
-            da = book
-    return render(request, 'books/show.html', da)
+            data = book
+    return render(request, 'books/show.html', data)
