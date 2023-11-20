@@ -3,3 +3,5 @@ main.py
 bookstore/__pycache__/*
 books/__pycache__/*
 .idea
+books/migrations/*
+db.sqlite3
