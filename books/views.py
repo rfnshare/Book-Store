@@ -1,20 +1,16 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-import json
-
-booksData = open('C:\\Users\\abdullah.faroque\\PycharmProjects\\bitfumes\\bookstore\\books.json').read()
-data = json.loads(booksData)
+from books.models import Book
 
 
 # Create your views here.
 def index(request):
+    data = Book.objects.all()
     context = {'books': data}
     return render(request, 'books/index.html', context)
 
 
 def show(request, id):
-    global _data
-    for book in data:
-        if book['id'] == id:
-            _data = book
-    return render(request, 'books/show.html', _data)
+    single_book = Book.objects.get(pk=id)
+    context = {'book': single_book}
+    return render(request, 'books/show.html', context)

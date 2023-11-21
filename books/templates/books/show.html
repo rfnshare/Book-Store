@@ -9,26 +9,26 @@
 
 <section class="py-10 flex justify-center">
     <div class="w-10/12">
-        <h1 class="text-center text-4xl">{{ title }}</h1>
+        <h1 class="text-center text-4xl">{{ book.title }}</h1>
         <div class="flex justify-between mt-10">
             <div class="flex justify-between">
                 <div class="w-3/12">
-                    <img src="{{ thumbnailUrl }}" width="200"/>
+                    <img src="{{ book.thumbnailUrl }}" width="200"/>
                 </div>
                 <div class="w-9/12">
                     <p class="text-3xl">About</p>
-                    <p class="text-gray-600 mt-5">{{ shortDescription }}</p>
+                    <p class="text-gray-600 mt-5">{{ book.shortDescription }}</p>
                     <div class="mt-10">
                         <p class="text-3xl">Pages</p>
-                        <p class="text-gray-600 mt-5">{{ pageCount }}</p>
+                        <p class="text-gray-600 mt-5">{{ book.pageCount }}</p>
                     </div>
                     <div class="mt-10">
                         <p class="text-3xl">Author</p>
-                        <p class="text-gray-600 mt-5">{{ authors | join:", " }}</p>
+                        <p class="text-gray-600 mt-5">{{ book.authors | join:", " }}</p>
                     </div>
                     <div class="mt-10">
-                        <p class="text-3xl">Pages</p>
-                        <p class="text-gray-600 mt-5">{{ longDescription }}</p>
+                        <p class="text-3xl">Details</p>
+                        <p class="text-gray-600 mt-5">{{ book.longDescription }}</p>
                     </div>
                 </div>
             </div>
