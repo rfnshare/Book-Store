@@ -32,13 +32,18 @@
                     </div>
                     <br>
                     <div class="mt-10">
-                        <form method="POST">
+                        <form method="POST" action="{% url 'review' %}">
                             {% csrf_token %}
                             <textarea name="review" id="" cols="5" rows="5" class="border rounded p-2 w-full"
                                       placeholder="Write your review here"></textarea>
                             <button type="submit" class="float-right border rounded p-2 bg-gray-800 text-white">Submit
                             </button>
                         </form>
+                    </div>
+                    <div class="mt-10">
+                        {% for review in reviews %}
+                            <p>- {{ review.body }}</p>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
