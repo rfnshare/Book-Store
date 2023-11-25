@@ -11,7 +11,7 @@ def index(request):
 
 
 def show(request, id):
-    reviews = Review.objects.all()
+    reviews = Review.objects.order_by('-created_at')
     single_book = get_object_or_404(Book, pk=id)
     context = {"book": single_book, "reviews": reviews}
     return render(request, "books/show.html", context)
